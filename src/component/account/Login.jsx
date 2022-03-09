@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 import { Dialog, withStyles, Box, Typography, makeStyles, List, ListItem } from '@material-ui/core';
 import { GoogleLogin } from 'react-google-login';
-import { AccountContext } from '../../context/AcountProvider';
+import { AccountContext } from '../../context/AccountProvider';
+import { clientId } from '../Constants/data';
 
 
 const useStyles = makeStyles({
@@ -30,9 +31,9 @@ const useStyles = makeStyles({
         justifyContent: 'center'
     },
 
-Google_Login:{
-    width: 45
-}
+    Google_Login:{
+        width: 45
+    }
 
 })
 
@@ -49,7 +50,6 @@ const style = {
 const Login = ({classes}) => {
     const classname = useStyles();
     const qrurlLogin = 'https://www.ginifab.com/feeds/qr_code/img/qrcode.jpg';
-    const clientId = '909966165723-jp4aa7kvv33smnmkn0vrnst69bsm94lo.apps.googleusercontent.com';
 
     const {account , setAccount } = useContext(AccountContext)
 
