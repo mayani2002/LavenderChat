@@ -18,4 +18,16 @@ export const addUser = async (request, response) => {
     }catch{
         response.status(500).json(error);
     }
+
+}
+
+export const getUsers = async (request, response) => {
+    try {
+        // find function is used here to get all the users from db
+        const users = await User.find({});
+        response.status(200).json(users);
+    }catch(error){ 
+        // HTTP status code 50bh0 is a generic error response
+        response.status(500).json(error);
+    }
 }

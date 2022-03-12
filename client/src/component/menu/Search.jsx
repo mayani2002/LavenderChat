@@ -49,25 +49,26 @@ const SearchBarStyle = makeStyles( theme => ({
 }))
 
 
-const Search = () =>{
+const Search = ({setText}) =>{
     const classes = SearchBarStyle();
 
     return(
         <>
-        <Box className={classes.search}>
-            <Box className={classes.searchIcon}>
-                <SearchIcon />
+            <Box className={classes.search}>
+                <Box className={classes.searchIcon}>
+                    <SearchIcon />
+                </Box>
+                <InputBase
+                    className={classes.base_input}
+                    placeholder="Search or start a new chat...."
+                    classes={{
+                        root: classes.inputRoot,
+                        input: classes.inputInput
+                    }}
+                    inputProps={{ 'aria-label': 'search' }}
+                    onChange= {(e)=> setText(e.target.value)}
+                />
             </Box>
-            <InputBase
-                className={classes.base_input}
-                placeholder="Search or start a new chat...."
-                classes={{
-                    root: classes.inputRoot,
-                    input: classes.inputInput
-                }}
-                inputProps={{ 'aria-label': 'search' }}
-            />
-        </Box>
         </>
     )
 }
