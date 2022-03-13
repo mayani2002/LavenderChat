@@ -1,5 +1,4 @@
 
-import { Box, makeStyles, Typography } from "@material-ui/core";
 import { useState } from "react";
 // components
 import Header from './Header';
@@ -12,8 +11,8 @@ const Menu = () => {
     return (
     <>
         <Header/>
-        <Search setText = {setText}/>;
-        <Conversations text= {text}/>;
+        <Search setText = {setText}/>
+        <Conversations text= {text}/>
     </>
 
     )

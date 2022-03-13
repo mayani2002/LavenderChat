@@ -1,6 +1,10 @@
-import { useEffect } from 'react';
-import { getUsers } from '../../service/api';
+import { useContext } from 'react';
 import { Box, makeStyles, Typography } from "@material-ui/core";
+
+// Components
+import { AccountContext } from '../../context/AccountProvider';
+import { UserContext } from '../../context/UserProvider';
+import {setConversation} from '../../service/api.js'
 
 const convUserStyle = makeStyles({
     contact:{
@@ -27,11 +31,20 @@ const convUserStyle = makeStyles({
 const Conversation = ({user}) => {
 
     const classes = convUserStyle();
+    const url = user.imageUrl;
+
+    const { account } = useContext(AccountContext);
+    const { setPerson } = useContext(UserContext);
+    
+    const setUser = async () =>{
+        setPerson(user);    
+        await setConversation({senderId: account.googleId , receiverId: user.googleId }); 
+    }
 
     return (
 
-        <Box className={classes.contact}>
-            <img className={classes.contactimg} src= {user.imageUrl}></img>
+        <Box className={classes.contact} onClick={()=> setUser()}>
+            <img className={classes.contactimg} src= {url}></img>
             <Box>
             <Typography className={classes.name} >{user.name}</Typography>
             </Box>

@@ -2,7 +2,7 @@ import { Box, makeStyles } from "@material-ui/core";
 import { useEffect, useState, useContext } from 'react';
 
 // components
-import { getUsers } from "../../service/api";
+import { getUsers } from "../../service/api.js";
 import Conversation from "./Conversation";
 import { AccountContext } from "../../context/AccountProvider";
 

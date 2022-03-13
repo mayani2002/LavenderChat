@@ -23,15 +23,15 @@ const Messenger = ()=>{
     const classes = useStyles();
     const { account } = useContext(AccountContext);
     return(
-<React.Fragment>
-        <p className={classes.headingName}>LavenderChat</p>
-        <AppBar className={classes.loginHeader}>
-            <Toolbar></Toolbar>
-        </AppBar>
+        <React.Fragment>
+            <p className={classes.headingName}>LavenderChat</p>
+            <AppBar className={classes.loginHeader}>
+                <Toolbar></Toolbar>
+            </AppBar>
 
-{/* <Login/> */}
-        {account? <ChatBox/>:<Login/>}
-</React.Fragment>
+            {/* <Login/> */}
+            {account? <ChatBox/>:<Login/>}
+        </React.Fragment>
     )
 }
 
