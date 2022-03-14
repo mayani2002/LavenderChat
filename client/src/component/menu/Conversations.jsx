@@ -17,7 +17,7 @@ const Conversations = ({text}) => {
     const classes = listStyle();
 
     const [users, setUsers] = useState([]);
-    const { account } = useContext(AccountContext);
+    const { account, socket, setActiveUsers } = useContext(AccountContext);
 
     useEffect( async () =>{
         const fetchData = async () => {
@@ -27,6 +27,13 @@ const Conversations = ({text}) => {
         }
         fetchData();
     },[text])
+
+    useEffect(() => {
+        socket.current.emit('addUser', account.googleId);
+        socket.current.on('getUsers', users => {
+            setActiveUsers(users);
+        });
+    },[account]);
 
     return (
         <><Box className={classes.chatBox}>

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Box, makeStyles, Typography } from "@material-ui/core";
 import { AccountContext } from "../../context/AccountProvider";
 
@@ -10,6 +10,7 @@ const msgStyle = makeStyles({
         backgroundColor: '#D9FFFA',
         borderRadius: '6px',
         marginBottom: '7px',
+        flexDirection: 'row',
         padding: '5px',
         maxWidth: '60%',
         width: 'fit-content',
@@ -25,7 +26,7 @@ const msgStyle = makeStyles({
         width: 'fit-content',
         wordBreak: 'break-word',
         alignSelf: 'end',
-        flexDirection: 'column',
+        flexDirection: 'row',
 
     },
     time:{
@@ -39,6 +40,11 @@ const msgStyle = makeStyles({
 
 const Message = ({message}) => {
 
+//     useEffect(
+// (
+//     () =>
+// )
+//     );
     const classes = msgStyle();
     const { account } = useContext(AccountContext);
 

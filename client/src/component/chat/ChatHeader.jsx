@@ -4,6 +4,7 @@ import { MoreVert,Search as SearchIcon } from '@material-ui/icons';
 
 // components   
 import { UserContext } from "../../context/UserProvider";
+import { AccountContext } from "../../context/AccountProvider";
 
 const ChatHeaderStyle = makeStyles({
  ChatHeaderBox: {
@@ -45,13 +46,18 @@ ChatHeaderLBox: {
 const ChatHeader = () => {
     const { person } = useContext(UserContext);
     const classes = ChatHeaderStyle();
+
+    const {activeUsers} = useContext(AccountContext);
+
 return(
         <Box className={classes.ChatHeaderBox} >
             <Box className={classes.ChatHeaderLBox}>
                 <img className={classes.avatar} src={person.imageUrl}></img>
                 <Box>
                     <Typography>{person.name}</Typography>
-                    <Typography>Online</Typography>
+                    <Typography>
+                        {activeUsers?.find(user => user.userId === person.googleId)? 'Online': 'Offline'}
+                    </Typography>
                 </Box>
             </Box>
             <Box className={classes.ChatHeaderRBox}>
