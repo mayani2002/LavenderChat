@@ -20,7 +20,7 @@ const FooterStyle = makeStyles({
     }
 
 })
-
+ 
 const Footer = ({sendText, setValue, value}) => {
     const classes = FooterStyle();
  

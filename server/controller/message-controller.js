@@ -26,4 +26,3 @@ export const getMessages = async (request, response) =>{
         response.status(500).json(error);
     }
 }
-

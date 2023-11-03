@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 const Messenger = ()=>{
     const classes = useStyles();
     const { account } = useContext(AccountContext);
-    return(
+    return (
         <React.Fragment>
             <p className={classes.headingName}>LavenderChat</p>
             <AppBar className={classes.loginHeader}>
@@ -30,9 +30,10 @@ const Messenger = ()=>{
             </AppBar>
 
             {/* <Login/> */}
+            {/* <ChatBox /> */}
             {account? <ChatBox/>:<Login/>}
         </React.Fragment>
-    )
+    );
 }
 
 export default Messenger;

@@ -77,7 +77,7 @@ const Login = ({classes}) => {
                     To use LavenderChat on your computer: 
                 </Typography>
                 <List className={classname.instList}>
-                    <ListItem>1. Open LavenderChat on your phone.</ListItem>
+                    <ListItem>1. Open 'O' Platform on your phone.</ListItem>
                     <ListItem>2. Tap Menu or Settings and selec Linked Devices</ListItem>
                     <ListItem>3. Point your screen to this screen to capture the code</ListItem>
                 </List>
